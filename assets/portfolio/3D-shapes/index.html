@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<div class="container-fluid">
+			<div class="row" >
+				<div class="col-2 d-flex flex-column justify-content-between custom-btn" style="height:100vh;">
+					<button id="rect-prism" onclick="rectPrismClick()" class="btn btn-primary">Rectangular Prism</button>
+					<button id="tri-prism" onclick="triPrismClick()" class="btn btn-primary">Triangular-based Prism</button>
+					<button id="tri-pyramid" onclick="triPyramidClick()" class="btn btn-primary">Triangular-based Pyramid</button>
+					<button id="square-pyramid" onclick="sqPyramidClick()" class="btn btn-primary">Square based Pyramid</button>
+					<button id="cone" onclick="coneClick()"class="btn btn-primary">Cone</button>
+					<button id="cylinder" onclick="cylinderClick()" class="btn btn-primary">Cylinder</button>
+					<button id="sphere" onclick="sphereClick()"	class="btn btn-primary">Sphere</button>
+				</div>
+			
+				<div class="col-auto d-flex flex-row-reverse col-centered">
+					<form class="form-inline">
+						<div class="row">
+							<div class="form-group">
+								<label for="faces" class="control-label mr-sm-2 custom-form-label" style="color:white;">Number of faces</label>
+								<input type="text" class="form-control-sm mb-2 mr-sm-2 custom-form-control" id="faces">
+								<label for="edges" class="control-label mr-sm-2 custom-form-label" style="color:white;">Number of edges</label>
+								<input type="text" class="form-control-sm mb-2 mr-sm-2 custom-form-control" id="edges">
+								<label for="corners" class="control-label mr-sm-2 custom-form-label" style="color:white;">Number of corners</label>
+								<input type="text" class="form-control-sm mb-2 mr-sm-2 custom-form-control" id="corners">
+								<button id="check-btn" type="button" class="btn btn-primary btn-sm" onclick="checkStats()">Check</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="successModalLabel">Congratulations!</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								You entered the correct answer.
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="failModal" tabindex="-1" role="dialog" aria-labelledby="failModalLabel" aria-hidden="true">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h5 class="modal-title" id="failModalLabel">Oops!</h5>
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body">
+								You entered the wrong answer.
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-secondary" data-dismiss="modal">Try Again</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/postprocessing@6.22.3/build/postprocessing.min.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>
