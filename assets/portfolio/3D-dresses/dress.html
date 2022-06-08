@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row no-gutters">
+            <div class="col-sm-3 col-md-2">
+                <h1 class="group-heading">Dresses</h1>
+                <!--<div class="btn-group-vertical">-->
+                <div id="dresses_group" class="button-group">
+                    <button id="short_dress" class="btn btn-default">
+                        <img src="buttonImages/shortDressButton.png" width="100"/> 
+                        <label>Short Dress</label>
+                      </button>
+                    <button id="long_dress" class="btn btn-default">
+                      <img src="buttonImages/longDressButton.png" width="100"/> 
+                      <label>Long Dress</label>
+                    </button>
+                    <button id="eastern_dress" class="btn btn-default">
+                        <img src="buttonImages/easternDressButton.png" width="100"/> 
+                        <label>Eastern Dress</label>
+                    </button>
+                    <button id="formal_dress" class="btn btn-default">
+                        <img src="buttonImages/formalDressButton.png" width="100"/> 
+                        <label>Formal Dress</label>
+                    </button>
+                    <button id="abaya" class="btn btn-default">
+                        <img src="buttonImages/abayaButton.png" width="100"/> 
+                        <label>Abaya</label>
+                    </button>
+                    <button id="kaftan_abaya" class="btn btn-default">
+                        <img src="buttonImages/kaftanAbayaButton.png" width="100"/> 
+                        <label>Kaftan Abaya</label>
+                    </button>
+                </div>
+            </div>
+            <div class="col-sm-3 col-md-2">
+                <h1 class="group-heading">Textures and Customizations</h1>
+                <div id="texture_group" class="accordian">
+                    <ul>
+                        <li>
+                            <div class="image_title"><a href="#">Plain Yellow</a></div>
+                            <a id="plainYellow" href="#"><img src="textures/Fabric035_1K_Color.jpg" /></a>
+                        </li>
+                        <li>
+                            <div class="image_title"><a href="#">Red Floral</a></div>
+                            <a id="floral" href="#"><img src="textures/floral.jpg" /></a>
+                        </li>
+                        <li>
+                            <div class="image_title"><a href="#">Check</a></div>
+                            <a id="check" href="#"><img src="textures/TexturesCom_FabricPatterns0015_S.jpg" /></a>
+                        </li>
+                        <li>
+                            <div class="image_title"><a href="#">Blue Floral</a></div>
+                            <a id="blue" href="#"><img src="textures/blue_floral.jpg" /></a>
+                        </li>
+                        <li>
+                            <div class="image_title"><a href="#">Polkadots</a></div>
+                            <a id="polkaDots" href="#"><img src="textures/TexturesCom_FabricPatterns0090_S.jpg" /></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-8 canvas-wrapper">
+                <canvas id="canvas-1" width="1000" height="600"></canvas>
+                <div id="loading" class="loader"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script type="module" src="dressScript.js"></script>
+</body>
+
+</html>
