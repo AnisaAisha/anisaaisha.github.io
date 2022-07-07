@@ -1222,3 +1222,11 @@ section .container {
 .credits a:hover {
     color: #fff;
 }
+
+.swiper-slide img {
+    max-width: 100%;
+}
+
+.swiper-slide video {
+    max-width: 100%;
+}
