@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Blog Template</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="details-body">
+    <div class="blog-post">
+        <h1>Ray Tracing</h1>
+        <h2>CS 6491: Fundamentals of Computer Graphics</h2>
+        <div>
+            <p>
+                During Spring 2024, I took a course on fundamentals of computer graphics at Georgia Tech.
+                In this course, we primarily worked on a Whitted style ray tracer in Processing (Java), and creating 3D models using various implicit surface techniques.
+                The major components of the ray tracer were,
+            </p>
+            <ul>
+                <li>Scene graphs</li>
+                <li>Anti-aliasing</li>
+                <li>Support for shadow rays</li>
+                <li>Diffuse and specular shading including reflections</li>
+                <li>Transformations (including rotation, scaling, and translation)</li>
+                <li>Soft effects such as motion blur, depth of field and glossy reflections</li>
+                <li>Acceleration structure for faster rendering of complex meshes (Bounding Volume Hierarchies)</li>
+            </ul>
+        </div>
+        <!-- <img src="https://via.placeholder.com/800x400" alt="Placeholder image"> -->
+        <p>
+            A classic ray tracer is can only produce simple shadows and materials with diffuse shading. This project also implements
+            the distributed ray tracing algorithm, which shoots multiple rays per pixel to implement several effects that cannot be achieved using
+            a simple ray tracer such as anti-aliasing, soft shadows, motion blur, glossy reflections and depth of field.
+        </p>
+        <p>
+            Below are some sample images from the ray tracing project.
+        </p>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="text-center mx-4">
+                <img src="assets/img/shadow.png" class="img-fluid" alt="">
+                <p class="caption">Multi-colored lights and shadow</p>
+            </div>
+            <div class="text-center mx-4">
+                <img src="assets/img/bunny.png" class="img-fluid" alt="">
+                <p class="caption">Stanford Bunny</p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="text-center mx-4">
+                <img src="assets/img/meshes.png" class="img-fluid" alt="">
+                <p class="caption">Buddha, Lucy, Bunny and Dragon</p> <!--rendered in 1.358 secs -->
+            </div>
+            <div class="text-center mx-4">
+                <img src="assets/img/custom.png" class="img-fluid" alt="">
+                <p class="caption">Custom Scene of 10 triangles</p> <!--rendered in 1.574 secs -->
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="text-center mx-4">
+                <img src="assets/img/motionblur.png" class="img-fluid" alt="">
+                <p class="caption">Motion Blur Effect</p>
+            </div>
+            <div class="text-center mx-4">
+                <img src="assets/img/softshadow.png" class="img-fluid" alt="">
+                <p class="caption">Soft Shadows</p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="text-center mx-4">
+                <img src="assets/img/dof.png" class="img-fluid" alt="">
+                <p class="caption">Depth of Field</p>
+            </div>
+            <div class="text-center mx-4">
+                <img src="assets/img/raytrace.png" class="img-fluid" alt="">
+                <p class="caption">Reflections</p>
+            </div>
+        </div>
+        <div class="d-flex align-items-center justify-content-center">
+            <div class="text-center mx-4">
+                <img src="assets/img/combined.png" class="img-fluid" alt="">
+                <p class="caption">Combination of Soft Shadows and Reflections</p>
+            </div>
+            <div class="text-center mx-4">
+                <img src="assets/img/flower_implicit.png" class="img-fluid" alt="">
+                <p class="caption">Ray traced Implicit Surface</p>
+            </div>
+        </div>
+        <!-- <p>
+            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, 
+            nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida.
+        </p> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
