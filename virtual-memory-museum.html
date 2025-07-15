@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Memory Museum</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="details-body">
+    <div class="blog-post">
+        <h1>Virtual Memory Museum</h1>
+        <div>
+            <p>
+                As part of <a href="https://sites.gatech.edu/liaolab/people/">JANUS Lab</a> at Georgia Tech, I helped design a Virtual Museum
+                in Unity with SteamVR on HTC Vive Pro headset. This project aims to test episodic memory, the effects of virtual reality
+                on the psyche of people, and the ability of older adults to recall events from their life. This project is currently in development.
+            </p>
+            <p>
+                As part of the project, I worked closely with lab members on testing the VR environment, researched previous relevant studies 
+                to create the study questionnaire (usability testing document) for the project.
+            </p>
+
+            <div>
+                <h5 class="gamedev-h5">VR Environment Design</h5>
+                <p>
+                    <ul>
+                        <li>Designed and modeled the architecture and layout of the virtual museum. </li>
+                        <li>
+                            Researched user behavior and comfort in VR environments to optimize the layout of the space and adjust the
+                            dimensions of the museum structure, sculptures, photos, and other relevant objects. This research was tailored
+                            for both young and older adults to ensure usability and accessibility, such as offering a seated experience in
+                            some areas and a standing experience in others.
+                        </li>
+                        <li>Optimized lighting to create a visually appealing and comfortable VR space, ensuring assets were well-lit without overwhelming users. This included spotlights and directional lighting to similar to an in-person museum.</li>
+                        <li>Incorporated dynamic lighting during drag-and-drop interactions, where photo frames light up to indicate the target frame for the photo.</li>
+                        <li>Arranged 3D objects in the VR space such that aesthetics and realism were balanced, creating an immersive experience.</li>
+                    </ul>
+                </p>
+                <div class="video-container text-center" style="flex: 1 1 100%;">
+                    <img
+                      src="assets/virtual-memory-museum/environment.png"
+                      alt="Procedural Plant"
+                      style="width: 100%; height: auto; display: block;"
+                    >
+                </div>
+            </div>
+            <div>
+                <h5 class="gamedev-h5">3D Asset Creation</h5>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap;">
+                    <div style="flex: 1 1 50%; padding-right: 20px;">
+                        <p>
+                            Modeled 3D assets from scratch in Blender. Specific objects that I created are,
+                        </p>
+                        <ul>
+                            <li>Museum structure and rooms with open window roof</li>
+                            <li>Photo frames</li>
+                            <li>Tilted table (in rooms for placing photos)</li>
+                            <li>Standees (placed outside each room for descriptive room information)</li>
+                            <li>Kiosks (for displaying museum map)</li>
+                        </ul>
+                    </div>
+                </div>            
+                <div style="display: flex; gap: 15px; justify-content: space-between;">
+                    <div style="flex: 1 1 33%; display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/virtual-memory-museum/standee.png" class="img-fluid project-img3" alt="Standee">
+                    </div>
+                    <div style="flex: 1 1 33%; display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/virtual-memory-museum/kiosk.png" class="img-fluid project-img3" alt="Kiosk">
+                    </div>
+                    <div style="flex: 1 1 33%; display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/virtual-memory-museum/table.png" class="img-fluid project-img3" alt="Table">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h5 class="gamedev-h5">Interactive Features</h5>
+                <ul>
+                    <li>Drag-and-drop functionality for photos, allowing users to move them from tables to photo frames using a laser pointer</li>
+                    <li>Rearranging photos within frames</li>
+                    <li>An instructional screen with clickable options and smooth fade-in/out text transitions</li>
+                    <li>Navigation tools such as teleportation and interactive museum maps to enable users to explore the VR museum</li>
+                    <li>A serial series of walkthrough that allows the participants to go through the museum incrementally, one by one as part of the study.</li>
+                </ul>
+                <div class="video-container text-center" style="flex: 1 1 500px;">
+                    <video width="560" height="315" controls autoplay muted loop>
+                      <source src="assets/virtual-memory-museum/dragdrop.mov" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div>
+                <h5 class="gamedev-h5">VR Navigation</h5>
+                <p>
+                    Added teleportation and created a 3D museum map with interactive pop-ups and tooltips for enhanced user navigation within VR, including features,
+                </p>
+                <ul>
+                    <li>Teleportation functionality so that the player can move to multiple locations in the VR space</li>
+                    <li>Fade-to-black transitions for room-to-room teleportation, incorporating helpful on-screen text during transitions</li>
+                    <li>A 3D museum map with pop-ups and descriptive tooltips for each room, providing detailed information and assisting
+                        users with navigation (please note that the video below is from a prototype version, and is not the same as the
+                        final version)</li>
+                </ul>
+                <div class="video-container text-center" style="flex: 1 1 500px;">
+                    <video width="560" height="315" controls autoplay muted loop>
+                      <source src="assets/virtual-memory-museum/popup-map.mp4" type="video/mp4">
+                      Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

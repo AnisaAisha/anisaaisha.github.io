@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhancing 3D Mesh Toplogy for Real-time Reconstruction</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="details-body">
+    <div class="blog-post">
+        <h1>Enhancing 3D Mesh Toplogy for Real-time Reconstruction</h1>
+        <div>
+            <p>
+                As part of my Master's coursework at Georgia Tech, I worked on a research-based project for an year with Dr. Greg Turk.
+            </p>
+            <div class="mt-5 mb-5">
+                <h5 class="gamedev-h5 mb-3">Topic and Motivation</h5>
+                <p>
+                    As AR technology continues to proliferate across various fields,
+                    from gaming to industrial design, the demand for accurate and immersive AR experiences
+                    has grown substantially. However, one challenge hindering the effectiveness of AR
+                    applications is the inaccuracy in object placement within physical spaces, primarily due to
+                    limitations in the scanning capabilities of mobile devices or AR hardware.
+                    These inaccuracies often lead to incomplete or incorrect 3D representations, manifesting
+                    as "blind spots" or gaps in the scanned environment. These gaps not only limit the user's
+                    interaction within the AR space but also restrict the exploration area to predefined
+                    boundaries, preventing AR applications from fully realizing their potential.
+                    This research project aims to address these "blind spots" by exploring the
+                    application of hole filling and mesh repair techniques during real-time scanning (focusing
+                    on AR environments). The goal is to fill the gaps that arise during the scanning process,
+                    thereby improving the accuracy and continuity of the 3D environment in real-time. The
+                    research will also focus on addressing challenging scenarios, such as filling voids between
+                    different types of meshes (e.g., the gap between a wall and a piece of furniture) and gaps between two distinct
+                    objects.
+                </p>
+            </div>
+            <div class="mt-5 mb-5">
+                <h5 class="gamedev-h5 mb-3">Obtaining LiDAR Data</h5>
+                <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+                    <!-- Text content -->
+                    <div style="flex: 1 1 50%; padding-right: 20px; display: flex; flex-direction: column; justify-content: space-between;">
+                        <p>
+                            Our real-time mesh reconstruction pipeline first obtains scanned data from the real world, and then integrates several algorithms to reconstruct the meshes in real-time.
+                        </p>
+                        <ul>
+                            <li><strong>Device Requirement: </strong>To access LiDAR data from mobile devices, pro version of </li>
+                            <li><strong>Platform Used: </strong>On mobile devices, raw LiDAR data is not directly available to access. Our project utilizes Unity's ARFoundation toolkit to extract the scanned data in the form of point clouds and depth maps.</li>
+                            <li><strong>Depth Maps: </strong>Depth maps obtained from the scanning process provide an approximation of how close or far objects are in a scene. They can visualize the distance of an object from the camera or a specific viewpoint, including any obstructions or overlapping objects that may lead to the creation of holes in the obtained scene.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Image Containers Side by Side -->
+                    <figure style="display: flex; gap: 20px; width: 100%; height: 300px; justify-content: center; align-items: center;">
+                        <div style="flex: 1 1 48%; display: flex; justify-content: center; align-items: center; height: 100%;">
+                            <img
+                                src="assets/realtime_holefilling/hellokitty.jpeg"
+                                alt="Procedural Plant"
+                                style="width: 100%; height: 100%; object-fit: cover;"
+                            >
+                        </div>
+                        <div style="flex: 1 1 48%; display: flex; justify-content: center; align-items: center; height: 100%;">
+                            <img
+                                src="assets/realtime_holefilling/depthimg.png"
+                                alt="Procedural Plant"
+                                style="width: 100%; height: 100%; object-fit: cover;"
+                            >
+                        </div>
+                    </figure>
+                </div>
+                <figcaption style="text-align: center; font-size: 14px; margin-top: 10px;">
+                    Left: Hello Kitty Model, Right: Depth Map of the Image
+                </figcaption>
+            </div>
+            <div class="mt-5 mb-5">
+                <h5 class="gamedev-h5 mb-3">Hole Identification</h5>
+                <p>
+                    A spatial data structure is used to store the connectivity information in a 3D mesh. Our pipeline utilizes the half-edge data structure,
+                    as it enables us to instantly query the points in a mesh (vertices) and triangles (faces). Particularly, we utilize the property of missing opposites/twins
+                    for boundary edges, and then check for a closed loop.
+                </p>
+            </div>
+            <div class="mt-5 mb-5">
+                <h5 class="gamedev-h5 mb-3">Mesh Reconstruction and Enhancement</h5>
+                <p>We test our pipeline by using multiple algorithms and analyzing which one of them is more effective. </p>
+                <h5>Filling Algorithms</h5>
+                <ul>
+                    <li>
+                        <strong>Centroid-based Filling: </strong>A simple approach that creates a new point at the center of the hole,
+                        and every vertex on the boundary is connected to it. If the holes are not flat and exist on a curvature, inaccurate results are produced using this approach.
+                    </li>
+                    <li><strong>Loop Split: </strong>A modification of a triangulation algorithm to connect non-neighboring vertices repeatedly, based on average split plane of the hole, such that it fills the hole.</li>
+                </ul>
+                <h5>Enhancement Algorithms</h5>
+                <p>
+                    <ul>
+                        <li><strong>Edge Flips: </strong>Flip edges between triangles/mesh based on triangle aspect ratios.</li>
+                        <li><strong>Edge Splits: </strong>Divide long edges at midpoint.</li>
+                        <li><strong>Smoothing: </strong>Apply Laplacian smoothing by adjusting position of vertices based on nearby vertices.</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="mt-5 mb-5">
+                <h5>Real-time Integration</h5>
+                <p>Currently in progress!</p>
+            </div>
+            <div class="video-container text-center" style="flex: 1 1 100%;">
+                <img
+                  src="assets/realtime_holefilling/thumbnail.png"
+                  alt="Procedural Plant"
+                  style="width: 100%; height: auto; display: block;"
+                >
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

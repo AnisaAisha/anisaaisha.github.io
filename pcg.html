@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Content Generation</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body class="details-body">
+    <div class="blog-post">
+        <h1>Procedural Content Generation</h1>
+        <!-- <h2>CS 8803: Fundamentals of Computer Graphics</h2> -->
+        <div>
+            <p>
+                As part of my Master's coursework at Georgia Tech, I took a course on Procedural Content Generation during Fall 2024 with Dr. Greg Turk.
+                The projects for this course focused on utilizing procedural techniques to generate 3D assets. All projects were created in Unity.
+                These projects use various techniques such as,
+            </p>
+            <ul>
+                <li>Perlin Noise</li>
+                <li>Plant Generation Algorithms</li>
+                <li>Implicit Surfaces</li>
+                <li>Marching Cubes Algorithm</li>
+                <li>Random Number Generation</li>
+                <li>Craig Reynold's Flocking Principles</li>
+            </ul>
+        </div>
+        <!-- <img src="https://via.placeholder.com/800x400" alt="Placeholder image"> -->
+        <!-- <p>
+            A classic ray tracer is can only produce simple shadows and materials with diffuse shading. This project also implements
+            the distributed ray tracing algorithm, which shoots multiple rays per pixel to implement several effects that cannot be achieved using
+            a simple ray tracer such as anti-aliasing, soft shadows, motion blur, glossy reflections and depth of field.
+        </p>
+        <p>
+            Below are some sample images from the ray tracing project.
+        </p> -->
+        <!-- <div class="d-flex align-items-center justify-content-center">
+            <h5>Project 1: Terrain Generation</h5>
+            
+            <div class="text-center mx-4">
+                <img src="assets/img/shadow.png" class="img-fluid" alt="">
+                <p class="caption">Multi-colored lights and shadow</p>
+            </div>
+        </div> -->
+        <div class="container mt-5">
+            <h5 class="gamedev-h5">Project 1: Terrain Generation</h5>        
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+              <!-- <div class="mx-4">
+                Created a height map terrain extending in XZ direction, with variations in height (Y direction). The elevation variations were created using
+                three bands of Perlin noise, with different spatial frequency and amplitude, giving fractal like qualities to the generated terrain. Color variations
+                were added to the terrain using texture maps. For this particular terrain, I chose a desert-landscape theme and generated textures accordingly.
+                The project also features the ability to create additional terrain on demand, that is, once the camera moves to the edge of the terrain, it generates a new
+                terrain that is a natural extension of current terrain.  In doing so, surface normals at the seams were
+                calculated to match each other to avoid inconsistencies. A first person camera view was also added. Simple plants, such as cacti and falling rocks were also placed in the scene. The scene was also made such that 
+                there are valleys where the rocks pile into.
+              </div> -->
+              <div class="mx-4">
+                <p>
+                    Designed and implemented a procedural terrain system featuring a desert-themed landscape.
+                </p>
+                <ul>
+                    <li>Generated terrain using multi-band Perlin noise for fractal-like elevation variation.</li>
+                    <li>Created custom desert textures and aligned surface normals to ensure seamless tiling between terrain chunks.</li>
+                    <li>Enabled terrain to extend dynamically based on camera position for an infinite environment effect.</li>
+                    <li>Added first-person camera view and scene objects like cacti, falling rocks, and valleys where rocks can be accumulated.</li>
+                </ul>
+              </div>
+              
+              
+              <!-- Video Content -->
+              <div class="video-container text-center" style="flex: 1 1 500px;">
+                <video width="560" height="315" controls autoplay muted loop>
+                  <source src="assets/pcg/terrain.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h5 class="gamedev-h5">Project 2: Plant Generation</h5>        
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+              <div class="mx-4">
+                <!-- Created variety of plants based on the algorithm proposed by de Reffye et al. in  "Plant Models Faithful to Botanical Structure and Development".
+                The plant generation depends on random seeds, updating their structure. Orthotropic (growing upwards), plagiotropic (growing horizontally), and a plant without any direction were created.
+                The plant branches also taper making them thinner towards the tip. Three different orders of branching were also added. Some additional stuff like flowers and leaves were added for visual appeal. -->
+                <p>
+                    Developed a variety of procedural plants using the algorithm proposed by de Reffye et al. in 
+                    <em>"Plant Models Faithful to Botanical Structure and Development"</em>. The generation process relies on random seeds to produce structural variations and simulate natural growth patterns.
+                </p>
+                <ul>
+                    <li>Implemented orthotropic (vertical), plagiotropic (horizontal), and directionless growth behavior of plants.</li>
+                    <li>Added tapering to make the branches thinner toward the tips.</li>
+                    <li>Included three hierarchical branching orders for structural complexity.</li>
+                    <li>Integrated flowers and leaves (created in Unity).</li>
+                </ul>
+            </div>
+              
+              <!-- Image Content -->
+              <div class="video-container text-center" style="flex: 1 1 100%;">
+                <img
+                  src="assets/pcg/plant.png"
+                  alt="Procedural Plant"
+                  style="width: 100%; height: auto; display: block;"
+                >
+              </div>
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h5 class="gamedev-h5">Project 3: Creature Generation</h5>        
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+              <div class="mx-4">
+                <!-- For this project, variety of creatures were created using implicit surfaces that were rendered using the Marching cubes algorithm.
+                The implicit surfaces used were spheres, metaballs etc.
+                The creatures differ by random seeds. These creatures have swappable parts, and also differ based on colors. There are also variations in creature part size.
+                Some parts of the creatures are also animated. -->
+                <p>
+                    Developed a system to generate a variety of creatures using implicit surfaces, rendered through the Marching Cubes algorithm. The creatures exhibit unique shapes, colors, and animations based on random numbers.
+                </p>
+                <ul>
+                    <li>Used implicit surfaces such as blobby spheres and lines to define creature geometry.</li>
+                    <li>Added transformations such as tapers and twists to create variations in creature shape and design.</li>
+                    <!-- <li>Added swappable body parts, color variations, and size differences using random numbers.</li> -->
+                    <li>Added simple animations to creature body parts, such as tail movement and antenna spins.</li>
+                </ul>
+              </div>
+              
+              <!-- Video Content -->
+              <div class="video-container text-center" style="flex: 1 1 500px;">
+                <video width="560" height="315" controls autoplay muted loop>
+                  <source src="assets/pcg/creatures.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+            </div>
+        </div>
+        <div class="container mt-5">
+            <h5 class="gamedev-h5">Project 4: Flocking Simulation</h5>        
+            <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+              <!-- <div class="mx-4">
+                This project is a procedural flocking animator. Based on Craig Reynold's rules of interaction, four forces were defined to govern the creature behavior
+                in flocks (flock centering, velocity matching, collision avoidance, wandering). A balanced out values of these forces provide realistic like flock simulation.
+                The creatures can also leave behind trails, and there are obstacles in the scene which make the behavior more realistic/immersive.
+              </div> -->
+              <div class="mx-4">
+                <p>
+                    This project is a procedural flocking animator, inspired by Craig Reynold's behavioral model.
+                    The simulation combines multiple steering behaviors to produce natural-looking group movement,
+                    with environmental interaction.
+                </p>
+                <ul>
+                    <li>Implemented four key forces: flock centering, velocity matching, collision avoidance, and wandering.</li>
+                    <li>Tuned force weights to achieve a balanced and realistic flocking behavior.</li>
+                    <li>Added environmental features such as collisions with obstacles and trail rendering of creatures.</li>
+                </ul>
+              </div>
+              
+              <!-- Video Content -->
+              <!-- <div class="video-container text-center" style="flex: 1 1 500px;">
+                <img src="assets/img/Isles-of-echoes.png" class="img-fluid project-img" alt="">
+              </div> -->
+
+              <div class="video-container text-center" style="flex: 1 1 500px;">
+                <video width="560" height="315" controls autoplay muted loop>
+                  <source src="assets/pcg/flock.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
