@@ -284,3 +284,42 @@ border-radius: 8px;
     min-width: 100px;
 }
 
+.game-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.game-section {
+    flex: 1 1 45%; /* Make each section take 45% of the space */
+    text-align: center;
+}
+
+/* For smaller screens (max-width: 767px), stack the sections */
+@media (max-width: 767px) {
+    .game-sections {
+        display: block; /* Stack sections vertically */
+    }
+
+    .game-section {
+        margin-bottom: 20px; /* Space between stacked sections */
+        text-align: left; /* Align text to the left */
+    }
+
+    /* Stack the video and images below each other */
+    .video-container {
+        display: block;
+        margin-top: 15px;
+    }
+
+    .img-fluid {
+        width: 100%; /* Ensure the images are responsive */
+        height: auto;
+    }
+
+    .video-container iframe,
+    .video-container video {
+        width: 100%;
+        height: auto;
+    }
+}
